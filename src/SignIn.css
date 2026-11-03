@@ -1,0 +1,108 @@
+
+.signin-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #145bea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fafc);
+}
+.card3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 18px;
+    border: 1px solid #e5eaf3;
+    margin: 130px auto 0;
+    height: 500px;
+    width: 700px;
+}
+
+.card3-heading {
+    width: 100%;
+    text-align: center;
+}
+
+.card3-heading h1 {
+   color: #14213d;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 15px 0 10px;
+}
+
+.card3-body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.card3-body .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card3-body .col-md-4 {
+    width: 300px;
+}
+
+.card3-body .form-control {
+    margin-bottom: 10px;
+}
+
+.card3-body .btn {
+    margin-top: 10px;
+}
+
+.card3-body .form-control {
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.card3-body .form-label {
+    display: block;
+    color: #14213d;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.card3-body .form-control {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+   
+  
+}
+
+.card3-body .btn {
+    width: 90px;
+    height: 48px;
+    margin-top: 20px;
+    background: #145bea;
+    border: none;
+    border-radius: 9px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+ 

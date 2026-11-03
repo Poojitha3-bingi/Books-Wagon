@@ -1,0 +1,353 @@
+
+
+
+.admin-home {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 30px;
+    background: #f4f7fb;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+
+.admin-page-heading {
+    margin-bottom: 20px;
+}
+
+.admin-page-heading h3 {
+    font-size: 25px;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.admin-page-heading p {
+    font-size: 15px;
+    color: #777;
+}
+
+
+
+.summary-card {
+    width: 100%;
+    min-height: 145px;
+    padding: 22px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    border-left: 5px solid #009688;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.summary-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.summary-card h2 {
+    font-size: 27px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.summary-card small {
+    font-size: 13px;
+    color: #888;
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background: #e0f2f1;
+    color: #009688;
+}
+
+/* Individual Summary Card Colors */
+
+.books-card {
+    border-left-color: #009688;
+}
+
+.users-card {
+    border-left-color: #3498db;
+}
+
+.orders-card {
+    border-left-color: #f39c12;
+}
+
+.sales-card {
+    border-left-color: #8e44ad;
+}
+
+.users-card .summary-icon {
+    background: #e3f2fd;
+    color: #3498db;
+}
+
+.orders-card .summary-icon {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.sales-card .summary-icon {
+    background: #f3e5f5;
+    color: #8e44ad;
+}
+
+/* ================================
+   ADMIN SECTIONS
+================================ */
+
+.admin-section {
+    width: 100%;
+    background: #fff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.section-heading {
+    margin-bottom: 15px;
+}
+
+.section-heading h5 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 7px;
+}
+
+.section-heading span {
+    font-size: 14px;
+    color: #888;
+}
+
+
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-orders-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.admin-orders-table thead {
+    background: #f5f7fa;
+}
+
+.admin-orders-table th {
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+    white-space: nowrap;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-orders-table td {
+    padding: 14px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-orders-table tbody tr:hover {
+    background: #f8fbfb;
+}
+
+.admin-orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.popular-book-card {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.popular-book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.book-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.book-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+.book-details {
+    padding: 15px;
+}
+
+.book-details h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.book-details p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.book-details h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #009688;
+    margin-bottom: 0;
+}
+
+
+.admin-section .text-center {
+    color: #888;
+}
+
+
+@media (max-width: 992px) {
+
+    .admin-home {
+        padding: 20px;
+    }
+
+    .summary-card {
+        min-height: 130px;
+    }
+
+    .book-image {
+        height: 200px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .admin-home {
+        padding: 15px;
+    }
+
+    .admin-page-heading h3 {
+        font-size: 22px;
+    }
+
+    .summary-card {
+        padding: 18px;
+    }
+
+    .summary-card h2 {
+        font-size: 23px;
+    }
+
+    .admin-section {
+        padding: 15px;
+    }
+
+    .section-heading h5 {
+        font-size: 18px;
+    }
+
+    .book-image {
+        height: 210px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .admin-home {
+        padding: 12px;
+    }
+
+    .summary-card {
+        min-height: 120px;
+    }
+
+    .summary-title {
+        font-size: 14px;
+    }
+
+    .summary-card h2 {
+        font-size: 21px;
+    }
+
+    .summary-card small {
+        font-size: 12px;
+    }
+
+    .summary-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 19px;
+    }
+
+    .admin-orders-table th,
+    .admin-orders-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .book-image {
+        height: 200px;
+    }
+
+    .book-details {
+        padding: 12px;
+    }
+
+}

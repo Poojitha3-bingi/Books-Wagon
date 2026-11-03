@@ -1,0 +1,135 @@
+
+.user-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f6fb;
+}
+
+
+.user-header {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    padding: 35px !important;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.user-header h2 {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+}
+
+.user-header h5 {
+    color: #dbeafe;
+    font-size: 19px;
+}
+
+.user-header p {
+    color: #e2e8f0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.user-sidebar {
+    background: linear-gradient(180deg, #172554, #1e3a8a);
+    width: 250px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-sidebar h3 {
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+}
+
+
+.user-sidebar .nav-link {
+    color: #e2e8f0 !important;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 22px !important;
+    margin: 4px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+
+.user-sidebar .nav-link i {
+    font-size: 18px;
+    width: 25px;
+    display: inline-block;
+}
+
+
+.user-sidebar .nav-link:hover {
+    background-color: #3b82f6;
+    color: white !important;
+    transform: translateX(5px);
+}
+
+
+.user-sidebar .nav-item:last-child {
+    margin-top: 50px !important;
+}
+
+.user-sidebar .nav-item:last-child .nav-link:hover {
+    background-color: #dc2626;
+}
+
+
+.user-content {
+    background-color: #f4f6fb;
+    min-width: 0;
+    padding: 30px !important;
+}
+
+
+@media (max-width: 768px) {
+
+    .user-dashboard {
+        flex-direction: column;
+    }
+
+    .user-sidebar {
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    .user-sidebar h3 {
+        padding: 15px 0 !important;
+    }
+
+    .user-sidebar .navbar-nav {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .user-sidebar .nav-link {
+        padding: 10px 12px !important;
+        font-size: 13px;
+    }
+
+    .user-sidebar .nav-item:last-child {
+        margin-top: 4px !important;
+    }
+
+    .user-header {
+        padding: 25px !important;
+    }
+
+    .user-header h2 {
+        font-size: 24px;
+    }
+
+    .user-content {
+        padding: 15px !important;
+    }
+}
+

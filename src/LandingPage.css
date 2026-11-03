@@ -1,0 +1,177 @@
+
+
+.landing-page {
+    min-height: 100vh;
+    background-color: #FAF8F1;
+    font-family: Arial, sans-serif;
+}
+
+
+.books-navbar {
+    background-color: #A8B99A;
+    padding: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.books-logo {
+    color: #344B38 !important;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.books-logo:hover {
+    color: #FFF9F0 !important;
+}
+
+.navbar-link {
+    color: #344B38 !important;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+.navbar-link:hover {
+    color: #FFF9F0 !important;
+}
+
+
+.signin-btn {
+    background-color: #E8C99B;
+    color: #344B38;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.signin-btn:hover {
+    background-color: #F5E5CC;
+    color: #344B38;
+}
+
+
+#BooksCarousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+#BooksCarousel .carousel-img,
+#BooksCarousel .carousel-item img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+
+#BooksCarousel .carousel-caption {
+    background: rgba(83, 107, 80, 0.82);
+    padding: 20px 25px;
+    border-radius: 12px;
+    bottom: 60px;
+    max-width: 650px;
+    margin: auto;
+}
+
+#BooksCarousel .carousel-caption h2 {
+    color: #F5D9A8;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+#BooksCarousel .carousel-caption p {
+    color: #FFF9F0;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+
+#BooksCarousel .carousel-indicators {
+    margin-bottom: 15px;
+}
+
+#BooksCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #E8C99B;
+    margin: 0 6px;
+}
+
+
+#BooksCarousel .carousel-control-prev-icon,
+#BooksCarousel .carousel-control-next-icon {
+    background-color: #8A9D78;
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 55%;
+}
+
+.books-footer {
+    background-color: #A8B99A !important;
+    color: #344B38 !important;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.books-footer a {
+    color: #344B38 !important;
+    text-decoration: none;
+}
+
+.books-footer a:hover {
+    color: #344B38!important;
+}
+
+@media (max-width: 768px) {
+    .books-logo {
+        font-size: 22px;
+    }
+
+    .navbar-link {
+        margin: 5px 0;
+    }
+
+    #BooksCarousel .carousel-item img {
+        height: 400px;
+    }
+
+    #BooksCarousel .carousel-caption {
+        bottom: 30px;
+        padding: 10px;
+        width: 85%;
+    }
+
+    #BooksCarousel .carousel-caption h2 {
+        font-size: 20px;
+    }
+
+    #BooksCarousel .carousel-caption p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    #BooksCarousel .carousel-item img {
+        height: 300px;
+    }
+
+    #BooksCarousel .carousel-caption {
+        bottom: 20px;
+        padding: 8px;
+    }
+
+    #BooksCarousel .carousel-caption h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    #BooksCarousel .carousel-caption p {
+        font-size: 11px;
+    }
+}

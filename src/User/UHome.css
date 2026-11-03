@@ -1,0 +1,101 @@
+.home-banner {
+    background: linear-gradient(100deg, #DDF5F1, #B8EAE5);
+    border-radius: 15px;
+    min-height: 200px;
+}
+
+.home-banner h1 {
+    color: #087E8B;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.home-banner p {
+    color: #526568;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.explore-btn {
+    background-color: #087E8B;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+}
+
+.explore-btn:hover {
+    background-color: #05AFA2;
+    color: white;
+}
+
+.home-title {
+    color: #087E8B;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.home-category {
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.home-category i {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+
+.home-category h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.home-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+.fiction {
+    background-color: #E1F5F2;
+    color: #087E8B;
+}
+
+.mystery {
+    background-color: #E9EAFB;
+    color: #555A9B;
+}
+
+.science {
+    background-color: #E3F0FF;
+    color: #3674B5;
+}
+
+.novels {
+    background-color: #FCE8EB;
+    color: #B34E66;
+}
+
+.biography {
+    background-color: #FFF1D8;
+    color: #A36A1A;
+}
+
+.programming {
+    background-color: #E8E8F5;
+    color: #55558A;
+}
