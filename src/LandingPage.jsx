@@ -3,42 +3,63 @@ import "./LandingPage.css";
 import { useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import Book1 from "./assets/Book1.jpg";
-// import Book2 from "./assets/Book2.jpg";
-// import Book3 from "./assets/Book3.jpg";
 
 function LandingPage() {
 
     const [showLogin, setShowLogin] = useState(false);
-    const bookList = useSelector((state) => state.book.bookList || []);
+
+    const bookList = useSelector(
+        (state) => state.book.bookList || []
+    );
 
     const navigate = useNavigate();
 
-    var Username = useRef(" ");
-    var Password = useRef(" ");
+    const Username = useRef(null);
+    const Password = useRef(null);
+
+    function closeLogin() {
+        setShowLogin(false);
+
+        if (Username.current) Username.current.value = "";
+        if (Password.current) Password.current.value = "";
+    }
 
     function checkSignIn(e) {
         e.preventDefault();
-        const username = Username;
-        const password = Password;
 
-        if (username.current.value === "Admin" && password.current.value === "Admin123") {
+        const username = Username.current.value.trim();
+        const password = Password.current.value;
+
+        if (username === "Admin" && password === "Admin123") {
+
             alert("Admin Login Success");
-            localStorage.setItem("isLoggedIn", username.current.value);
-            setShowLogin(false);
+
+            localStorage.setItem("isLoggedIn", username);
+
+            closeLogin();
+
             navigate("/Admin/ahome");
+
         }
         else if (
-            username.current.value !== "Admin" &&
-            password.current.value === username.current.value.slice(0, 3) + "123"
+            username !== "Admin" &&
+            username.length >= 3 &&
+            password === username.slice(0, 3) + "123"
         ) {
+
             alert("User Login Success");
-            localStorage.setItem("isLoggedIn", username.current.value);
-            setShowLogin(false);
+
+            localStorage.setItem("isLoggedIn", username);
+
+            closeLogin();
+
             navigate("/User/uhome");
+
         }
         else {
+
             alert("Invalid Username or Password");
+
         }
     }
 
@@ -46,40 +67,88 @@ function LandingPage() {
 
         <div className="landing-page">
 
-            <nav className="navbar navbar-expand-lg books-navbar">
+            {/* NAVBAR */}
+
+            <nav className="navbar navbar-expand-lg navbar-light books-navbar">
+
                 <div className="container">
+
                     <a className="navbar-brand books-logo" href="/">
                         📚 Books Wagon
                     </a>
 
-                    <div className="collapse navbar-collapse" id="booksNavbar">
+                    {/* MOBILE HAMBURGER BUTTON */}
+
+                    <button
+                        className="navbar-toggler custom-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#booksNavbar"
+                        aria-controls="booksNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                    {/* NAVBAR MENU */}
+
+                    <div
+                        className="collapse navbar-collapse"
+                        id="booksNavbar"
+                    >
+
                         <ul className="navbar-nav ms-auto align-items-lg-center">
 
                             <li className="nav-item">
-                                <a className="nav-link navbar-link" href="#popular">
+
+                                <a
+                                    className="nav-link navbar-link"
+                                    href="#popular"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#booksNavbar"
+                                >
                                     Popular Books
                                 </a>
+
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link navbar-link" href="#about">
+
+                                <a
+                                    className="nav-link navbar-link"
+                                    href="#about"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#booksNavbar"
+                                >
                                     About
                                 </a>
+
                             </li>
 
                             <li className="nav-item ms-lg-3">
+
                                 <button
                                     className="btn signin-btn"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#booksNavbar"
                                     onClick={() => setShowLogin(true)}
                                 >
                                     Sign In
                                 </button>
+
                             </li>
 
                         </ul>
+
                     </div>
+
                 </div>
+
             </nav>
+
+
+            {/* BOOKS CAROUSEL */}
 
             <div className="container mt-4">
 
@@ -97,18 +166,22 @@ function LandingPage() {
                             data-bs-target="#BooksCarousel"
                             data-bs-slide-to="0"
                             className="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
                         ></button>
 
                         <button
                             type="button"
                             data-bs-target="#BooksCarousel"
                             data-bs-slide-to="1"
+                            aria-label="Slide 2"
                         ></button>
 
                         <button
                             type="button"
                             data-bs-target="#BooksCarousel"
                             data-bs-slide-to="2"
+                            aria-label="Slide 3"
                         ></button>
 
                     </div>
@@ -117,71 +190,100 @@ function LandingPage() {
 
                         <div className="carousel-item active">
 
-                           <img
-                            src="/assets/Book1.jpg"
-                         className="d-block w-100"
-                             alt="Book Collection"
-                              />
-
-                            <div className="carousel-caption">
-                                <h2>Explore Our Book Collection</h2>
-                                <p>Discover amazing books across different genres.</p>
-                            </div>
-
-                        </div>
-
-                        <div className="carousel-item">
-
-                           <img
-                               src="/assets/Book2.jpg"
-                              className="d-block w-100"
-                               alt="Discover Books"
-                                />
-
-                            <div className="carousel-caption">
-                                <h2>Discover Your Next Favorite Read</h2>
-                                <p>Every book opens the door to a new adventure.</p>
-                            </div>
-
-                        </div>
-
-                        <div className="carousel-item">
-
-                           <img
-                            src="/assets/Book3.jpg"
-                             className="d-block w-100"
-                              alt="Reading Journey"
+                            <img
+                                src="/assets/Book1.jpg"
+                                className="d-block w-100"
+                                alt="Book Collection"
                             />
 
                             <div className="carousel-caption">
+
+                                <h2>Explore Our Book Collection</h2>
+
+                                <p>
+                                    Discover amazing books across different genres.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="carousel-item">
+
+                            <img
+                                src="/assets/Book2.jpg"
+                                className="d-block w-100"
+                                alt="Discover Books"
+                            />
+
+                            <div className="carousel-caption">
+
+                                <h2>Discover Your Next Favorite Read</h2>
+
+                                <p>
+                                    Every book opens the door to a new adventure.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="carousel-item">
+
+                            <img
+                                src="/assets/Book3.jpg"
+                                className="d-block w-100"
+                                alt="Reading Journey"
+                            />
+
+                            <div className="carousel-caption">
+
                                 <h2>Your Journey Begins with a Book!</h2>
-                                <p>Read more, learn more, and grow every day.</p>
+
+                                <p>
+                                    Read more, learn more, and grow every day.
+                                </p>
+
                             </div>
 
                         </div>
 
                     </div>
 
+
                     <button
                         className="carousel-control-prev"
                         type="button"
                         data-bs-target="#BooksCarousel"
                         data-bs-slide="prev"
+                        aria-label="Previous slide"
                     >
+
                         <span className="carousel-control-prev-icon"></span>
+
                     </button>
+
 
                     <button
                         className="carousel-control-next"
                         type="button"
                         data-bs-target="#BooksCarousel"
                         data-bs-slide="next"
+                        aria-label="Next slide"
                     >
+
                         <span className="carousel-control-next-icon"></span>
+
                     </button>
 
                 </div>
+
             </div>
+
+
+            {/* POPULAR BOOKS */}
 
             <div className="container py-5" id="popular">
 
@@ -230,13 +332,19 @@ function LandingPage() {
                                     </button>
 
                                 </div>
+
                             </div>
+
                         </div>
 
                     ))}
 
                 </div>
+
             </div>
+
+
+            {/* ABOUT SECTION */}
 
             <div className="container py-5" id="about">
 
@@ -264,18 +372,30 @@ function LandingPage() {
                             </p>
 
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
+
+            {/* LOGIN MODAL */}
 
             {showLogin && (
 
                 <div
                     className="modal show d-block"
                     tabIndex="-1"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="loginTitle"
                     style={{
                         backgroundColor: "rgba(0,0,0,0.65)",
                         zIndex: 1055
+                    }}
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) closeLogin();
                     }}
                 >
 
@@ -292,6 +412,7 @@ function LandingPage() {
                             <div className="modal-header border-0">
 
                                 <h3
+                                    id="loginTitle"
                                     className="modal-title text-center fw-bold"
                                     style={{ color: "#234567" }}
                                 >
@@ -301,7 +422,8 @@ function LandingPage() {
                                 <button
                                     type="button"
                                     className="btn-close"
-                                    onClick={() => setShowLogin(false)}
+                                    onClick={closeLogin}
+                                    aria-label="Close"
                                 ></button>
 
                             </div>
@@ -325,6 +447,7 @@ function LandingPage() {
                                             ref={Username}
                                             placeholder="username"
                                             className="form-control"
+                                            autoComplete="username"
                                             required
                                         />
 
@@ -339,8 +462,9 @@ function LandingPage() {
                                         <input
                                             type="password"
                                             ref={Password}
-                                            placeholder="username"
+                                            placeholder="password"
                                             className="form-control"
+                                            autoComplete="current-password"
                                             required
                                         />
 
@@ -357,15 +481,21 @@ function LandingPage() {
                                 </form>
 
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
             )}
 
+
+            {/* FOOTER */}
+
             <footer
                 className="text-center py-3"
-                style={{ backgroundColor: " #A8B99A" }}
+                style={{ backgroundColor: "#A8B99A" }}
             >
 
                 <p className="mb-1 text-white">
@@ -379,7 +509,9 @@ function LandingPage() {
             </footer>
 
         </div>
+
     );
+
 }
 
 export default LandingPage;
