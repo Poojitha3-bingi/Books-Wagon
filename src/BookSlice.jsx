@@ -1,16 +1,16 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-import java from "../assets/java.jpg";
-import python from "../assets/python.jpg";
-import richdad from "../assets/richdad.jpg";
-import wings from "../assets/wings.jpg";
-import alchemist from "../assets/alchemist.jpg";
-import atomic from "../assets/James Clear.jpg";
-import money from "../assets/Morgan Housel.jpg";
-import think from "../assets/Napoleon Hill.jpg";
-import harrypotter from "../assets/harrypotter.jpg";
-import subconscious from "../assets/subconscious.jpg";
+import java from "./assets/java.jpg";
+import python from "./assets/python.jpg";
+import richdad from "./assets/richdad.jpg";
+import wings from "./assets/wings.jpg";
+import alchemist from "./assets/alchemist.jpg";
+import atomic from "./assets/James Clear.jpg";
+import money from "./assets/Morgan Housel.jpg";
+import think from "./assets/Napoleon Hill.jpg";
+import harrypotter from "./assets/harrypotter.jpg";
+import subconscious from "./assets/subconscious.jpg";
 
 
 const BookSlice = createSlice({

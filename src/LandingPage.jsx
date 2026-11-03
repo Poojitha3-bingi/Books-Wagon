@@ -3,6 +3,9 @@ import "./LandingPage.css";
 import { useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+// import Book1 from "./assets/Book1.jpg";
+// import Book2 from "./assets/Book2.jpg";
+// import Book3 from "./assets/Book3.jpg";
 
 function LandingPage() {
 
