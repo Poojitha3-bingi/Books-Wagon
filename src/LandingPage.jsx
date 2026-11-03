@@ -114,11 +114,11 @@ function LandingPage() {
 
                         <div className="carousel-item active">
 
-                            <img
-                                src="assets/Book1.jpg"
-                                className="d-block w-100"
-                                alt="Mountain Adventure"
-                            />
+                           <img
+                            src="/assets/Book1.jpg"
+                         className="d-block w-100"
+                             alt="Book Collection"
+                              />
 
                             <div className="carousel-caption">
                                 <h2>Explore Our Book Collection</h2>
@@ -129,11 +129,11 @@ function LandingPage() {
 
                         <div className="carousel-item">
 
-                            <img
-                                src="assets/Book2.jpg"
-                                className="d-block w-100"
-                                alt="River Adventure"
-                            />
+                           <img
+                               src="/assets/Book2.jpg"
+                              className="d-block w-100"
+                               alt="Discover Books"
+                                />
 
                             <div className="carousel-caption">
                                 <h2>Discover Your Next Favorite Read</h2>
@@ -144,10 +144,10 @@ function LandingPage() {
 
                         <div className="carousel-item">
 
-                            <img
-                                src="assets/Book3.jpg"
-                                className="d-block w-100"
-                                alt="Camping Adventure"
+                           <img
+                            src="/assets/Book3.jpg"
+                             className="d-block w-100"
+                              alt="Reading Journey"
                             />
 
                             <div className="carousel-caption">
