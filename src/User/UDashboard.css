@@ -1,9 +1,27 @@
 
 
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+
 .user-header {
-    background: linear-gradient(90deg, #087E8B, #05BFA5, #00C9D8);
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #087E8B,
+        #05BFA5,
+        #00C9D8
+    );
     color: white;
-    padding: 25px 30px !important;
+    padding: 25px 30px;
 }
 
 .user-header h2 {
@@ -13,23 +31,28 @@
 }
 
 .user-header p {
-    color: #ffffff;
+    color: white;
     font-size: 16px;
+    margin-bottom: 0;
 }
+
+
 
 
 .user-dashboard {
     display: flex;
-    background-color: #F5F8FA;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
+    background-color: #F5F8FA;
 }
+
 
 
 
 .user-sidebar {
     width: 250px;
     min-height: 100vh;
+    flex: 0 0 250px;
     flex-shrink: 0;
     background: linear-gradient(
         180deg,
@@ -45,10 +68,14 @@
     font-weight: bold;
     text-align: center;
     padding: 25px 10px;
+    margin: 0;
 }
 
 .user-sidebar .navbar-nav {
+    display: flex;
+    flex-direction: column;
     padding: 0 10px;
+    list-style: none;
 }
 
 .user-sidebar .nav-link {
@@ -57,7 +84,7 @@
     color: white !important;
     font-size: 17px;
     font-weight: 600;
-    padding: 14px 15px !important;
+    padding: 14px 15px;
     margin-bottom: 8px;
     border-radius: 10px;
     transition: 0.3s ease;
@@ -69,8 +96,8 @@
 }
 
 .user-sidebar .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff !important;
+    background-color: rgba(255,255,255,0.2);
+    color: white;
     transform: translateX(4px);
 }
 
@@ -81,27 +108,28 @@
     margin-left: auto;
 }
 
-.user-sidebar .logout-link {
+.user-sidebar .logout-item {
     margin-top: 50px;
 }
 
 
 
 .user-content {
-    flex-grow: 1;
+    flex: 1;
     min-width: 0;
     min-height: 100vh;
-    padding: 30px !important;
+    padding: 30px;
     background-color: #F5F8FA;
 }
 
 
 
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
 
     .user-sidebar {
         width: 210px;
+        flex: 0 0 210px;
     }
 
     .user-sidebar h3 {
@@ -111,7 +139,7 @@
 
     .user-sidebar .nav-link {
         font-size: 15px;
-        padding: 12px 10px !important;
+        padding: 12px 10px;
     }
 
     .user-sidebar .nav-link i {
@@ -120,11 +148,11 @@
     }
 
     .user-content {
-        padding: 22px !important;
+        padding: 20px;
     }
 
     .user-header {
-        padding: 22px 25px !important;
+        padding: 22px 25px;
     }
 
     .user-header h2 {
@@ -134,64 +162,10 @@
 }
 
 
-
-@media (max-width: 768px) {
-
-    .user-dashboard {
-        flex-direction: column;
-    }
-
-    /* Sidebar becomes horizontal navigation */
-
-    .user-sidebar {
-        width: 100%;
-        min-height: auto;
-        height: auto;
-    }
-
-    .user-sidebar h3 {
-        font-size: 22px;
-        padding: 15px 10px;
-        margin-bottom: 0;
-    }
-
-    .user-sidebar .navbar-nav {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 8px;
-        gap: 5px;
-    }
-
-    .user-sidebar .nav-link {
-        font-size: 14px;
-        padding: 10px 12px !important;
-        margin-bottom: 0;
-        border-radius: 8px;
-    }
-
-    .user-sidebar .nav-link i {
-        font-size: 17px;
-        margin-right: 7px;
-    }
-
-    .user-sidebar .nav-link:hover {
-        transform: translateY(-2px);
-    }
-
-    .user-sidebar .logout-link {
-        margin-top: 0;
-    }
-
-    .user-content {
-        width: 100%;
-        min-height: auto;
-        padding: 20px 15px !important;
-    }
+@media screen and (max-width: 768px) {
 
     .user-header {
-        padding: 20px !important;
+        padding: 20px 15px;
         text-align: center;
     }
 
@@ -203,43 +177,79 @@
         font-size: 14px;
     }
 
-}
-
-
-
-@media (max-width: 480px) {
-
-    .user-sidebar h3 {
-        font-size: 20px;
-        padding: 12px 8px;
+    .user-dashboard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
+
+
+    .user-sidebar {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        flex: none;
+    }
+
+    .user-sidebar h3 {
+        font-size: 22px;
+        padding: 15px 10px;
+    }
+
+
+
     .user-sidebar .navbar-nav {
-        justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         padding: 8px;
         gap: 5px;
     }
 
+    .user-sidebar .nav-item {
+        width: auto;
+    }
+
     .user-sidebar .nav-link {
-        font-size: 12px;
-        padding: 9px 10px !important;
+        font-size: 14px;
+        padding: 10px !important;
+        margin: 0;
+        border-radius: 8px;
+        white-space: nowrap;
     }
 
     .user-sidebar .nav-link i {
-        font-size: 15px;
-        margin-right: 5px;
+        font-size: 17px;
+        margin-right: 6px;
     }
 
-    .user-sidebar .badge {
-        font-size: 10px;
+    .user-sidebar .nav-link:hover {
+        transform: translateY(-2px);
+    }
+
+    .user-sidebar .logout-item {
+        margin-top: 0;
     }
 
     .user-content {
-        padding: 15px 10px !important;
+        width: 100%;
+        flex: none;
+        min-height: auto;
+        padding: 20px 15px;
     }
 
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+
     .user-header {
-        padding: 18px 12px !important;
+        padding: 18px 12px;
     }
 
     .user-header h2 {
@@ -248,6 +258,35 @@
 
     .user-header p {
         font-size: 13px;
+    }
+
+    .user-sidebar h3 {
+        font-size: 19px;
+        padding: 12px 8px;
+    }
+
+    .user-sidebar .navbar-nav {
+        justify-content: flex-start;
+        padding: 8px;
+        gap: 4px;
+    }
+
+    .user-sidebar .nav-link {
+        font-size: 12px;
+        padding: 8px !important;
+    }
+
+    .user-sidebar .nav-link i {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+
+    .user-sidebar .badge {
+        font-size: 10px;
+    }
+
+    .user-content {
+        padding: 15px 10px;
     }
 
 }

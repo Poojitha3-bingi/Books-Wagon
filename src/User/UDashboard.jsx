@@ -1,7 +1,8 @@
+
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
-import './UDashboard.css';
+import "./UDashboard.css";
 
 import { getCartByUsername } from "../CartSlice";
 import { getWishlistByUsername } from "../WishlistSlice";
@@ -19,127 +20,126 @@ function UserDashboard() {
 
     useEffect(() => {
         dispatch(getCartByUsername(username));
-    }, []);
-
-    useEffect(() => {
         dispatch(getWishlistByUsername(username));
-    }, []);
-
-    useEffect(() => {
         dispatch(getOrdersByUsername(username));
-    }, []);
+    }, [dispatch, username]);
 
     return (
         <>
-           
-            <div className="container-fluid p-4 user-header">
-                <h2 className="fw-bold mb-1">
+
+   
+
+            <div className="user-header">
+                <h2>
                     Welcome, {username}!
                 </h2>
-                <p className="mb-0">
+
+                <p>
                     Discover your next favourite book with Books Wagon.
                 </p>
             </div>
 
-            <br></br>
 
          
-            <div className="d-flex user-dashboard">
 
-             
-                <nav
-                    className="flex-shrink-0 user-sidebar"
-                    style={{ width: "250px", minHeight: "100vh" }}
-                >
+            <div className="user-dashboard">
 
-                    <h3 className="text-white text-center fw-bold py-4">
-                <i className="bi bi-book-half me-2"></i>
-                  Books Wagon
+           
+
+                <nav className="user-sidebar">
+
+                    <h3>
+                        <i className="bi bi-book-half me-2"></i>
+                        Books Wagon
                     </h3>
 
-                    <ul className="navbar-nav flex-column">
+                    <ul className="navbar-nav">
 
                         <li className="nav-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/uhome"
                             >
-                                <i className="bi bi-house-door-fill me-3"></i>
+                                <i className="bi bi-house-door-fill"></i>
                                 Home
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/uviewBooks"
                             >
-                                <i className="bi bi-book me-3"></i>
+                                <i className="bi bi-book"></i>
                                 View Books
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/cart"
                             >
-                                <i className="bi bi-cart3 me-3"></i>
+                                <i className="bi bi-cart3"></i>
                                 My Cart
 
-                                <span className="badge bg-warning text-dark ms-3">
-                                    {cartitems && cartitems.length}
+                                <span className="badge">
+                                    {cartitems?.length || 0}
                                 </span>
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/wishlist"
                             >
-                                <i className="bi bi-heart me-3"></i>
+                                <i className="bi bi-heart"></i>
                                 My Wishlist
 
-                                <span className="badge bg-warning text-dark ms-3">
-                                    {wishlistitems && wishlistitems.length}
+                                <span className="badge">
+                                    {wishlistitems?.length || 0}
                                 </span>
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/orders"
                             >
-                                <i className="bi bi-box-seam me-3"></i>
+                                <i className="bi bi-box-seam"></i>
                                 My Orders
 
-                                <span className="badge bg-warning text-dark ms-3">
-                                    {allOrders && allOrders.length}
+                                <span className="badge">
+                                    {allOrders?.length || 0}
                                 </span>
                             </Link>
                         </li>
 
-                        <li className="nav-item mt-5">
+                        <li className="nav-item logout-item">
                             <Link
-                                className="nav-link text-white px-4 py-3"
+                                className="nav-link"
                                 to="/User/ulogout"
                             >
-                                <i className="bi bi-box-arrow-right me-3"></i>
+                                <i className="bi bi-box-arrow-right"></i>
                                 Logout
                             </Link>
                         </li>
 
                     </ul>
+
                 </nav>
 
-               
-                <div className="flex-grow-1 p-4 user-content">
-                    <Outlet></Outlet>
+
+            
+
+                <div className="user-content">
+                    <Outlet />
                 </div>
 
             </div>
+
         </>
     );
 }
