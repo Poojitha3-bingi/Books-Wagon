@@ -16,7 +16,7 @@ export default function ViewAllOrders(){
                     <th>Price</th>
                     <th>quantity</th>
                     <th>Image</th>
-                    <th>Actions</th>
+    
                 </tr>
             </thead>
 
