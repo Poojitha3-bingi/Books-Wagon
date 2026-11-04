@@ -85,7 +85,8 @@ function LandingPage() {
                 <div className="container">
 
                     <a className="navbar-brand books-logo" href="/">
-                        📚 Books Wagon
+                     <i className="bi bi-bookshelf me-2"> Books Wagon</i>
+                        
                     </a>
 
                     <button
