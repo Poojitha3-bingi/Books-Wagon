@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { addtoOrders } from "../OrderSlice";
 import { useNavigate } from "react-router-dom";
+import { removeItemfromCart } from "../CartSlice";
 
 export default function Cart(){
 
@@ -28,6 +29,7 @@ export default function Cart(){
         }
         console.log( orderobj)
         dispatch(addtoOrders(orderobj))
+         dispatch( removeItemfromCart(orderobj))
         alert("order placed succesfully!....")
         navigateto("/User/orders")
     }
@@ -41,6 +43,7 @@ export default function Cart(){
             userAddress: address
         };
         dispatch(addtoOrders(orderobj));
+        dispatch( removeItemfromCart(orderobj))
     });
     alert("All orders placed successfully!");
     navigateto("/User/orders");
@@ -95,7 +98,12 @@ var totalSumPrice = cartitems ? cartitems.reduce((total, c) => total + (Number(c
                         <td>{c.quantity}</td>
                         <td> <img src = {c.img} height = {150} width = {200} alt = " " /> </td>
                         <td><button className = "btn btn-primary" data-bs-target = "#ordermodal" data-bs-toggle = "modal" onClick = {()=>receiveddata(c)}>Buy Now</button>
-                        <button className = "btn btn-danger">Remove</button>
+                   <button
+    className="btn btn-danger"
+    onClick={() => dispatch(removeItemfromCart(c))}
+>
+    Remove
+</button>
                         </td>
                     </tr>
 

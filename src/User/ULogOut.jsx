@@ -56,7 +56,7 @@ function uLogOut(e) {
 
     <h3 className="text-center fw-bold mb-2" style={{ color: "#234567" }}>LogOut </h3>
 
-    <p className="text-center text-secondary mb-4">Enter your login details </p>
+    <p className="text-center text-secondary mb-4">Enter your logout details </p>
 
          <form onSubmit={ uLogOut}>
 

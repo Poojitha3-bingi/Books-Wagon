@@ -26,11 +26,17 @@ import {createSlice} from "@reduxjs/toolkit";
     },
     getCartByUsername:(state,action)=>{
         state.myCart = state.cartItems.filter((obj)=>obj.username == action.payload);
-    }
+    },
+    
+    removeItemfromCart:(state,action)=>{
+        var ind = state.cartItems.findIndex((obj)=>obj.cid == action.payload.cid && obj.username == action.payload.username)
+       state.cartItems.splice(ind,1);
+
+    },
 
  }
 })
-export const { addtoCart, removefromCart,  getCartByUsername } = cartSlice.actions;
+export const { addtoCart, removefromCart, removeItemfromCart,  getCartByUsername } = cartSlice.actions;
 export default cartSlice.reducer;
 
   
