@@ -17,6 +17,16 @@ function LandingPage() {
     const Username = useRef(null);
     const Password = useRef(null);
 
+    // Close mobile navbar
+    function closeNavbar() {
+        const navbar = document.getElementById("booksNavbar");
+
+        if (navbar && navbar.classList.contains("show")) {
+            navbar.classList.remove("show");
+        }
+    }
+
+    // Close login modal and clear inputs
     function closeLogin() {
         setShowLogin(false);
 
@@ -24,6 +34,7 @@ function LandingPage() {
         if (Password.current) Password.current.value = "";
     }
 
+    // Login validation
     function checkSignIn(e) {
         e.preventDefault();
 
@@ -77,8 +88,6 @@ function LandingPage() {
                         📚 Books Wagon
                     </a>
 
-                    {/* MOBILE HAMBURGER BUTTON */}
-
                     <button
                         className="navbar-toggler custom-toggler"
                         type="button"
@@ -100,39 +109,44 @@ function LandingPage() {
 
                         <ul className="navbar-nav ms-auto align-items-lg-center">
 
+                            {/* POPULAR BOOKS */}
+
                             <li className="nav-item">
 
                                 <a
                                     className="nav-link navbar-link"
                                     href="#popular"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#booksNavbar"
+                                    onClick={closeNavbar}
                                 >
                                     Popular Books
                                 </a>
 
                             </li>
 
+                            {/* ABOUT */}
+
                             <li className="nav-item">
 
                                 <a
                                     className="nav-link navbar-link"
                                     href="#about"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#booksNavbar"
+                                    onClick={closeNavbar}
                                 >
                                     About
                                 </a>
 
                             </li>
 
+                            {/* SIGN IN */}
+
                             <li className="nav-item ms-lg-3">
 
                                 <button
                                     className="btn signin-btn"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#booksNavbar"
-                                    onClick={() => setShowLogin(true)}
+                                    onClick={() => {
+                                        closeNavbar();
+                                        setShowLogin(true);
+                                    }}
                                 >
                                     Sign In
                                 </button>
@@ -283,7 +297,7 @@ function LandingPage() {
             </div>
 
 
-            {/* POPULAR BOOKS */}
+            {/* POPULAR BOOKS SECTION */}
 
             <div className="container py-5" id="popular">
 
