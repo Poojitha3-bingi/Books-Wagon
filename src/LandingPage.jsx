@@ -17,7 +17,7 @@ function LandingPage() {
     const Username = useRef(null);
     const Password = useRef(null);
 
-    // Close mobile navbar
+ 
     function closeNavbar() {
         const navbar = document.getElementById("booksNavbar");
 
@@ -26,7 +26,7 @@ function LandingPage() {
         }
     }
 
-    // Close login modal and clear inputs
+
     function closeLogin() {
         setShowLogin(false);
 
@@ -34,7 +34,7 @@ function LandingPage() {
         if (Password.current) Password.current.value = "";
     }
 
-    // Login validation
+
     function checkSignIn(e) {
         e.preventDefault();
 
@@ -78,7 +78,7 @@ function LandingPage() {
 
         <div className="landing-page">
 
-            {/* NAVBAR */}
+        
 
             <nav className="navbar navbar-expand-lg navbar-light books-navbar">
 
@@ -100,7 +100,7 @@ function LandingPage() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    {/* NAVBAR MENU */}
+                 
 
                     <div
                         className="collapse navbar-collapse"
@@ -109,7 +109,7 @@ function LandingPage() {
 
                         <ul className="navbar-nav ms-auto align-items-lg-center">
 
-                            {/* POPULAR BOOKS */}
+                         
 
                             <li className="nav-item">
 
@@ -123,8 +123,7 @@ function LandingPage() {
 
                             </li>
 
-                            {/* ABOUT */}
-
+                      
                             <li className="nav-item">
 
                                 <a
@@ -137,7 +136,7 @@ function LandingPage() {
 
                             </li>
 
-                            {/* SIGN IN */}
+                       
 
                             <li className="nav-item ms-lg-3">
 
@@ -162,7 +161,7 @@ function LandingPage() {
             </nav>
 
 
-            {/* BOOKS CAROUSEL */}
+         
 
             <div className="container mt-4">
 
@@ -297,7 +296,7 @@ function LandingPage() {
             </div>
 
 
-            {/* POPULAR BOOKS SECTION */}
+        
 
             <div className="container py-5" id="popular">
 
@@ -358,7 +357,7 @@ function LandingPage() {
             </div>
 
 
-            {/* ABOUT SECTION */}
+        
 
             <div className="container py-5" id="about">
 
@@ -394,7 +393,7 @@ function LandingPage() {
             </div>
 
 
-            {/* LOGIN MODAL */}
+     
 
             {showLogin && (
 
@@ -505,7 +504,7 @@ function LandingPage() {
             )}
 
 
-            {/* FOOTER */}
+        
 
             <footer
                 className="text-center py-3"
@@ -517,7 +516,7 @@ function LandingPage() {
                 </p>
 
                 <p className="mb-0 text-warning">
-                    Your Journey Begins with a Book! 📚
+                    Your Journey Begins with a Book! 
                 </p>
 
             </footer>

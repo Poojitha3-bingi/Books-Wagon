@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Navbar */
+
 .books-navbar {
     background-color: #A8B99A;
     padding: 15px 0;
@@ -35,7 +35,7 @@
     color: #FFF9F0 !important;
 }
 
-/* Sign In Button */
+
 .signin-btn {
     background-color: #E8C99B;
     color: #344B38;
@@ -51,7 +51,6 @@
     color: #344B38;
 }
 
-/* Custom Hamburger Menu */
 .custom-toggler {
     border: 2px solid #344B38;
     border-radius: 8px;
@@ -72,7 +71,7 @@
     background-color: #F5E5CC;
 }
 
-/* Carousel */
+
 #BooksCarousel {
     border-radius: 15px;
     overflow: hidden;
@@ -108,7 +107,6 @@
     margin-bottom: 5px;
 }
 
-/* Carousel Indicators */
 #BooksCarousel .carousel-indicators {
     margin-bottom: 15px;
 }
@@ -121,7 +119,6 @@
     margin: 0 6px;
 }
 
-/* Carousel Controls */
 #BooksCarousel .carousel-control-prev-icon,
 #BooksCarousel .carousel-control-next-icon {
     background-color: #8A9D78;
@@ -130,7 +127,7 @@
     background-size: 55%;
 }
 
-/* Footer */
+
 .books-footer {
     background-color: #A8B99A !important;
     color: #344B38 !important;
@@ -147,7 +144,7 @@
     color: #344B38 !important;
 }
 
-/* Tablet and Mobile Responsive */
+
 @media (max-width: 991px) {
     .navbar-collapse {
         padding-top: 15px;
@@ -166,7 +163,7 @@
     }
 }
 
-/* Tablet */
+
 @media (max-width: 768px) {
     .books-logo {
         font-size: 22px;
@@ -191,7 +188,7 @@
     }
 }
 
-/* Mobile */
+
 @media (max-width: 480px) {
     #BooksCarousel .carousel-item img {
         height: 300px;
