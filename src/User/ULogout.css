@@ -1,0 +1,184 @@
+
+
+.logout-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    background: linear-gradient(
+        135deg,
+        #dff7f4,
+        #b2ebe5,
+        #e8f6f5
+    );
+}
+
+
+
+
+.logout-card {
+    width: 500px;
+    max-width: 100%;
+    min-height: 430px;
+    padding: 45px !important;
+    background-color: #E8F5E9;
+    border: none;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.logout-card h3 {
+    color: #234567;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logout-card p {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+
+
+
+.logout-card .form-label {
+    color: #234567;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.logout-card .form-control {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #c8e1dc;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.logout-card .form-control:focus {
+    border-color: #05BFA5;
+    box-shadow: 0 0 0 0.2rem rgba(5, 191, 165, 0.15);
+    outline: none;
+}
+
+
+
+
+.logout-card .logout-btn {
+    width: 100%;
+    padding: 13px;
+    background-color: #234567;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logout-card .logout-btn:hover {
+    background-color: #087E8B;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+
+@media (max-width: 992px) {
+
+    .logout-card {
+        width: 450px;
+        padding: 35px !important;
+        min-height: 400px;
+    }
+
+    .logout-card h3 {
+        font-size: 26px;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .logout-page {
+        padding: 25px 20px;
+    }
+
+    .logout-card {
+        width: 100%;
+        max-width: 430px;
+        min-height: auto;
+        padding: 30px 25px !important;
+        border-radius: 16px !important;
+    }
+
+    .logout-card h3 {
+        font-size: 24px;
+    }
+
+    .logout-card p {
+        font-size: 14px;
+    }
+
+    .logout-card .form-control {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .logout-card .logout-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .logout-page {
+        padding: 20px 12px;
+    }
+
+    .logout-card {
+        padding: 25px 18px !important;
+        width: 100%;
+        min-height: auto;
+        border-radius: 14px !important;
+    }
+
+    .logout-card h3 {
+        font-size: 21px;
+    }
+
+    .logout-card p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .logout-card .form-label {
+        font-size: 14px;
+    }
+
+    .logout-card .form-control {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .logout-card .logout-btn {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+}

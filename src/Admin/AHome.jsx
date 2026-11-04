@@ -136,7 +136,7 @@ function AdminHome() {
             </div>
 
 
-    
+    {/* 
 
             <div className="admin-section mt-4">
                 <div className="section-heading">
@@ -199,7 +199,7 @@ function AdminHome() {
 
                 </div>
 
-            </div>
+            </div> */}
 
 
        
