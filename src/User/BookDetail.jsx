@@ -78,7 +78,7 @@ function BookDetail() {
                   Price:{" "}  <span style={{ color: "#05A88F" }}>    ₹{reqBook.price}    </span>     </h5>
 
                 <div className="d-flex flex-wrap gap-2">
-                       <button className="btn btn-primary"> Buy Now</button>
+                     
 
                   <button className="btn btn-warning" onClick={manageCart}> Add to Cart</button>
 
